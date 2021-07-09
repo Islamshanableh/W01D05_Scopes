@@ -9,7 +9,7 @@ const favoriteFood = function () {
     return myFavoriteFood;
 };
 
-// Q2 why myFavoriteFood didnt update
+// Q2 
 
 const updateFavoriteFood = function (newValue) {
   myFavoriteFood = newValue ;
@@ -21,7 +21,7 @@ const updateFavoriteFood = function (newValue) {
 // Q3
 
 const createCounter = function () {
- let counter = 0; //i change this to comment to solve Q4 
+ let counter = 0; // make this comment to solve Q4 
 
   // this anonymous function is a closure function that has access to its own closure variable
   return function () {
@@ -117,14 +117,32 @@ const restCount=function (start){
        
 }
 
-// Q6 
+// Q6 i dont how save rturn value 
 
 const addToList = function (toDo) {
+   let newadd= toDo
+   let arr=[toDo , newadd]
+   return arr
    
-   return toDo 
+   
+};
+
+// Q7 i dont how save rturn value 
+
+
+
+
+
+
+// Q8 i dont how save return value 
+const deposit = function (amount) {
+       amount = amount  
+     return amount ;
 };
 
 
-
-
-
+const withdraw = function (amount) {
+  let newammount = amount    
+      amount = newammount - amount 
+      return amount
+};
