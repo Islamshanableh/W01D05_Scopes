@@ -20,7 +20,7 @@ const updateFavoriteFood = function (newValue) {
 
 // Q3
 
-const createCounter = function () {
+/*const createCounter = function () {
  let counter = 0; // make this comment to solve Q4 
 
   // this anonymous function is a closure function that has access to its own closure variable
@@ -30,15 +30,32 @@ const createCounter = function () {
 };
 const counter1 =createCounter()
 const counter2 = createCounter()
-
+*/
 // Q4
 const createCounter1 = function (start) {
-  counter = start;
-  return "count is update"
+  let counter = start; 
+  
+  // this anonymous function is a closure function that has access to its own closure variable
+  return function () {
+    counter = counter + 1 
+    return counter;
+  };
 };
 
+ const counter4= createCounter1(5) 
 
+// const createCounter1 = function () {
+ 
+//   let start = 0; 
+//   return function (start) {
+//     count
+  
+//     counter = counter + 1 
+//     return counter;
+//   };
+// };
 
+// const counter4= createCounter1() 
 
 
 
@@ -118,14 +135,14 @@ const restCount=function (start){
 }
 
 // Q6 i dont how save rturn value 
-
+let newadd =" "
 const addToList = function (toDo) {
-   let newadd= toDo
-   let arr=[toDo , newadd]
-   return arr
-   
+  newadd = newadd + " " + toDo;
+  return  newadd
+     
    
 };
+
 
 // Q7 i dont how save rturn value 
 
@@ -135,14 +152,22 @@ const addToList = function (toDo) {
 
 
 // Q8 i dont how save return value 
+
+
+
+
 const deposit = function (amount) {
-       amount = amount  
-     return amount ;
+  let newammount = 0; 
+  
+
+  return function() {
+    
+    newammount = newammount + amount 
+    return amount;
+  };
 };
 
 
 const withdraw = function (amount) {
-  let newammount = amount    
-      amount = newammount - amount 
-      return amount
+  
 };
