@@ -134,7 +134,7 @@ const restCount=function (start){
        
 }
 
-// Q6 i dont how save rturn value 
+// Q6 
 let newadd =" "
 const addToList = function (toDo) {
   newadd = newadd + " " + toDo;
@@ -144,30 +144,73 @@ const addToList = function (toDo) {
 };
 
 
-// Q7 i dont how save rturn value 
+// Q7 
+const createToDoList = function () {
+     let newadd = ""
 
+     return function (toDo){
+       newadd = newadd + " " + toDo 
+       return newadd 
+     }
 
-
-
-
-
-// Q8 i dont how save return value 
-
-
-
-
-const deposit = function (amount) {
-  let newammount = 0; 
-  
-
-  return function() {
-    
-    newammount = newammount + amount 
-    return amount;
-  };
 };
 
+const toDoListOne = createToDoList();
+
+
+
+// Q8  
+
+
+
+let newammount = 0; 
+const deposit = function (amount) {
+ 
+  newammount = newammount + amount 
+  return newammount 
+  
+
+  
+};
+
+// Q9 
 
 const withdraw = function (amount) {
   
+  if(amount > newammount){
+  return "insufficient funds, current balance:" + newammount  
+ }
+ else{
+  newammount = newammount - amount 
+  return newammount 
+
+ }
+  
 };
+
+
+// Q10 
+const createAccount = function (initialValue) {
+  let newammount = initialValue 
+  return function(transactionType , amount ){
+    if(transactionType.toLowerCase()=== "deposit"){
+      newammount = newammount + amount 
+      return newammount 
+       
+    }
+    else if(transactionType.toLowerCase()=== "withdraw"){
+        if (amount > newammount){
+          return "insufficient funds, current balance:" + newammount 
+
+        }
+        else{
+          newammount = newammount - amount 
+           return newammount 
+        }
+    }
+
+  }
+};
+
+const accountOne = createAccount(0);
+const accountTwo = createAccount(500)
