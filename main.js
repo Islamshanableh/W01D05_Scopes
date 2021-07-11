@@ -214,3 +214,66 @@ const createAccount = function (initialValue) {
 
 const accountOne = createAccount(0);
 const accountTwo = createAccount(500)
+
+
+
+// Extra Practice 
+
+// Q1 try to solve 
+
+
+
+// Q2 + Q3 + Q4 
+const randomMove = function () {
+  const play = ["rock","paper","scissors"]
+  const randomplay = play[Math.floor(Math.random()*play.length)]
+  return randomplay
+};
+
+let win = 0
+let lose = 0
+let resetgame = ""
+const rockPaperScissors = function (move , resetgame) {
+  
+  const randomMoveplay = randomMove();
+   if(resetgame == true){
+       win = 0 
+       lose = 0 
+       return "the game has been reset"
+   }
+  if(win == 5 || lose == 5){
+      win = 0 
+      lose = 0 
+      return "the game has been reset"
+
+  }
+     if(move=== "rock" && randomMoveplay === "scissors"){
+         win = win + 1 
+         return {"Won " : win , "Lost " :lose}
+     }
+     else if(move=== "paper" && randomMoveplay === "rock"){
+      win = win + 1 
+      return {"Won " : win , "Lost " :lose}
+     }
+     else if(move=== "scissors" && randomMoveplay === "paper"){
+          win = win + 1 
+      return {"Won " : win , "Lost " :lose}
+     }
+     else if(move === randomMoveplay){
+         return "it is a draw"
+     }
+     else{
+         lose = lose + 1 
+      return {"Won " : win , "Lost " :lose}
+     }
+
+     
+       
+      
+
+     
+
+};
+
+
+// Q5 TRY TO SOLVE 
